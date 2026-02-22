@@ -1,0 +1,14 @@
+const file = ... // supports Blob / File API / bytes / strings
+const sotrage = getStorage(); // create a reference to the Storage
+const rootRef = ref(storage); // create a root reference.
+const fileRef = ref(storage, 'image/somefilename.jpg'); 
+
+uploadBytes(fileRef, file).then(function(snapshot) {
+  console.log('Uploaded a blob or file!');
+});
+
+// Upload string
+uploadString(fileRef, string, 'base64').then(function(snapshot) {
+  console.log('Upload a base64 string!');
+});
+
