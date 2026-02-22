@@ -1,0 +1,11 @@
+const provider = new GoogleAuthProvider(); // include third-party providers
+// Either open popup window or redirect
+
+signInWithPopUp(auth, provider)
+  .then((result) => {
+    // the signed- in user info.
+    const user = result.user;
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
