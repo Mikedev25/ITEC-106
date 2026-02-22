@@ -1,0 +1,14 @@
+addDoc(collection(db, "receipt"), { ----make sure to use proper db name
+  uid: "randomuid123",
+  date: 04-07-2023,
+  amount: 10.50,
+  vendor: "Greate Airline",
+  item: "NYC-SFO flight",
+  verified: true,
+})
+.then(function() {
+  console.log("Document successfully written!");
+})
+.catch(function(error) {
+  console.error("Error writing document", error);
+});
