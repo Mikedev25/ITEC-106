@@ -1,0 +1,9 @@
+const q = query(collection(db, "receipts"),
+                where("uid", "==", myUserId), // filter, comparison operator, value
+                where("verified", "==", false));
+
+getDocs(q).then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    sendForVerifcation(doc.data());
+  });
+});
